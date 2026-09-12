@@ -29,13 +29,7 @@
   <header class="navbar">
     <div class="nav-container">
       <a href="#" class="brand-logo">
-        <div class="brand-logo-icon">
-          <i class="fa-solid fa-tree"></i>
-        </div>
-        <div class="brand-text">
-          <h1>JUNGLEE RESORT</h1>
-          <span>Rajaji National Park</span>
-        </div>
+        <img src="images/logo.jpg" alt="Junglee Resort Rajaji National Park" class="brand-logo-img">
       </a>
 
       <ul class="nav-menu" id="navMenu">
@@ -44,32 +38,25 @@
         <li><a href="#packages" class="nav-link">Packages</a></li>
         <li><a href="#survival" class="nav-link">Jungle Survival</a></li>
         <li><a href="#route" class="nav-link">How To Reach</a></li>
-        <li><a href="#facts" class="nav-link">Forest Guidelines</a></li>
+        <li><a href="#facts" class="nav-link">Forest Rules</a></li>
         <li><a href="#sightseeing" class="nav-link">Sightseeing</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
-        <li class="mobile-only-item" style="display: flex; align-items: center; justify-content: space-between; width: 100%; padding-top: 10px; border-top: 1px solid var(--border-color);">
-          <span style="font-weight: 600; color: var(--text-heading);">Toggle Mode</span>
-          <button class="theme-toggle-btn" aria-label="Toggle Theme">
-            <i class="fa-solid fa-moon"></i>
-          </button>
-        </li>
       </ul>
 
       <div class="nav-actions">
         <button class="theme-toggle-btn" aria-label="Toggle Theme" title="Switch Theme">
           <i class="fa-solid fa-moon"></i>
         </button>
-        <a href="tel:9953423776" class="btn-header-call">
-          <i class="fa-solid fa-phone"></i> 9953423776
+        <a href="tel:9953423776" class="btn-header-call" title="Call Us">
+          <i class="fa-solid fa-phone"></i> <span>9953423776</span>
         </a>
-        <a href="https://wa.me/919953423776?text=Hi%20Junglee%20Resort!%20I%20want%20to%20inquire%20about%20booking." target="_blank" class="btn-header-wa">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        <a href="https://wa.me/919953423776?text=Hi%20Junglee%20Resort!%20I%20want%20to%20inquire%20about%20booking." target="_blank" class="btn-header-wa" title="WhatsApp Booking">
+          <i class="fa-brands fa-whatsapp"></i> <span>WhatsApp</span>
         </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
-
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
-        <i class="fa-solid fa-bars"></i>
-      </button>
     </div>
   </header>
 
@@ -339,15 +326,38 @@
           </div>
         </div>
 
+        <!-- Guest Contact Information for Razorpay -->
+        <div class="calc-form-grid" style="margin-top: 10px; border-top: 1px dashed var(--border-color); padding-top: 20px;">
+          <div class="form-group">
+            <label for="guestName"><i class="fa-solid fa-user" style="color: var(--accent);"></i> Guest Name</label>
+            <input type="text" id="guestName" class="form-control" placeholder="Enter Full Name" value="Sagar Mishra">
+          </div>
+
+          <div class="form-group">
+            <label for="guestPhone"><i class="fa-solid fa-phone" style="color: var(--accent);"></i> Mobile Number</label>
+            <input type="tel" id="guestPhone" class="form-control" placeholder="Enter 10-digit Mobile" value="9953423776">
+          </div>
+
+          <div class="form-group">
+            <label for="guestEmail"><i class="fa-solid fa-envelope" style="color: var(--accent);"></i> Email Address</label>
+            <input type="email" id="guestEmail" class="form-control" placeholder="Enter Email" value="guest@jungleresort.com">
+          </div>
+        </div>
+
         <div class="calc-result-box">
           <div class="total-display">
             <span class="total-label">Estimated Total Package Cost</span>
             <span class="total-price" id="calcTotalPrice">₹4,000</span>
           </div>
 
-          <a href="#" id="calcBookBtn" target="_blank" class="btn-primary">
-            <i class="fa-brands fa-whatsapp"></i> Book Instantly On WhatsApp
-          </a>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+            <button id="payRazorpayBtn" class="btn-primary" style="background: linear-gradient(135deg, #09347A 0%, #146BDB 100%); color: #FFF; border: none; box-shadow: 0 8px 20px rgba(20, 107, 219, 0.3);">
+              <i class="fa-solid fa-credit-card"></i> Pay & Book Now (Razorpay)
+            </button>
+            <a href="#" id="calcBookBtn" target="_blank" class="btn-wa-action" style="font-size: 0.95rem; background: #25D366; color: #FFFFFF !important; font-weight: 700; padding: 14px 24px; border-radius: 50px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i> Book via WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -357,7 +367,11 @@
   <section class="section" id="survival">
     <div class="container">
       <div class="survival-banner">
+        <div class="survival-glow-orb"></div>
         <div class="survival-content">
+          <div class="survival-badge">
+            <i class="fa-solid fa-crown" style="color: var(--accent);"></i> Signature Wilderness Offer
+          </div>
           <h3>Special Exclusive Experience</h3>
           <h2>Feel Of Jungle Survival Package</h2>
           <p>
@@ -365,24 +379,29 @@
           </p>
 
           <ul class="survival-list">
-            <li><i class="fa-solid fa-van-shuttle"></i> Delhi Transfers (Innova / Tempo Traveler)</li>
-            <li><i class="fa-solid fa-campground"></i> 1N/2D Dome Camping Experience</li>
-            <li><i class="fa-solid fa-fire-burner"></i> Meals Cooked on Woodfire</li>
-            <li><i class="fa-solid fa-mug-hot"></i> Morning & Evening Woodfire Tea/Snacks</li>
-            <li><i class="fa-solid fa-user-shield"></i> Dedicated Support Staff Assistance</li>
-            <li><i class="fa-solid fa-compass"></i> Wild Jungle Survival Guidance</li>
+            <li><i class="fa-solid fa-van-shuttle"></i> <span>Delhi Transfers (Innova / Tempo)</span></li>
+            <li><i class="fa-solid fa-campground"></i> <span>1N/2D Dome Camping Experience</span></li>
+            <li><i class="fa-solid fa-fire-burner"></i> <span>Meals Cooked on Woodfire</span></li>
+            <li><i class="fa-solid fa-mug-hot"></i> <span>Morning & Evening Woodfire Tea</span></li>
+            <li><i class="fa-solid fa-user-shield"></i> <span>Dedicated Support Staff</span></li>
+            <li><i class="fa-solid fa-compass"></i> <span>Jungle Survival Guidance</span></li>
           </ul>
 
-          <a href="https://wa.me/919953423776?text=Hi!%20I%20am%20interested%20in%20the%20Jungle%20Survival%20Package%20(Rs.%205500/person)." target="_blank" class="btn-primary">
+          <a href="https://wa.me/919953423776?text=Hi!%20I%20am%20interested%20in%20the%20Jungle%20Survival%20Package%20(Rs.%205500/person)." target="_blank" class="btn-primary btn-survival-cta">
             <i class="fa-brands fa-whatsapp"></i> Inquire Survival Package
           </a>
         </div>
 
         <div class="survival-price-card">
-          <i class="fa-solid fa-campground" style="font-size: 3rem; color: var(--accent); margin-bottom: 16px;"></i>
-          <h4 style="color: #FFF; font-size: 1.2rem; margin-bottom: 10px;">Survival Package Price</h4>
-          <div style="font-size: 2.8rem; font-weight: 800; color: var(--accent); font-family: 'Outfit';">₹5,500</div>
-          <span style="color: rgba(255,255,255,0.7); font-size: 0.85rem;">Per Person (Includes Transfers from Delhi)</span>
+          <div class="price-card-badge">ALL-INCLUSIVE</div>
+          <i class="fa-solid fa-campground price-card-icon"></i>
+          <h4 class="price-card-title">Survival Package Price</h4>
+          <div class="price-card-amount">₹5,500</div>
+          <p class="price-card-desc">Per Person • Includes Delhi Pickup & Drop</p>
+          <div class="price-card-features">
+            <span><i class="fa-solid fa-check"></i> Delhi Pick & Drop</span>
+            <span><i class="fa-solid fa-check"></i> All Meals Included</span>
+          </div>
         </div>
       </div>
     </div>
@@ -449,43 +468,71 @@
       </div>
 
       <div class="video-grid">
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/XfqKaP0xNMc" title="How To Reach Junglee Resort" allowfullscreen></iframe>
+        <!-- Video 1 -->
+        <div class="video-card" onclick="playInlineVideo(this, 'XfqKaP0xNMc')">
+          <div class="video-poster-wrapper">
+            <img src="https://img.youtube.com/vi/XfqKaP0xNMc/hqdefault.jpg" alt="How To Reach Route Video" class="video-poster-img">
+            <div class="play-btn-overlay">
+              <i class="fa-solid fa-play"></i>
+            </div>
           </div>
           <div class="video-info">
             <h4>How To Reach Route Video</h4>
             <p>Detailed road guide from Haridwar/Rishikesh to resort.</p>
+            <a href="https://www.youtube.com/watch?v=XfqKaP0xNMc" target="_blank" onclick="event.stopPropagation();" class="yt-card-btn">
+              <i class="fa-brands fa-youtube" style="color: #FF0000;"></i> Open Video on YouTube
+            </a>
           </div>
         </div>
 
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/a-4y4qv72MA" title="Junglee Resort Overview" allowfullscreen></iframe>
+        <!-- Video 2 -->
+        <div class="video-card" onclick="playInlineVideo(this, 'a-4y4qv72MA')">
+          <div class="video-poster-wrapper">
+            <img src="https://img.youtube.com/vi/a-4y4qv72MA/hqdefault.jpg" alt="Resort Overview & Rooms" class="video-poster-img">
+            <div class="play-btn-overlay">
+              <i class="fa-solid fa-play"></i>
+            </div>
           </div>
           <div class="video-info">
             <h4>Resort Overview & Rooms</h4>
             <p>Take a virtual tour of the resort property & surrounding forest.</p>
+            <a href="https://www.youtube.com/watch?v=a-4y4qv72MA" target="_blank" onclick="event.stopPropagation();" class="yt-card-btn">
+              <i class="fa-brands fa-youtube" style="color: #FF0000;"></i> Open Video on YouTube
+            </a>
           </div>
         </div>
 
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/E9PEFvnywEY" title="Vindhyawasini Temple Trek" allowfullscreen></iframe>
+        <!-- Video 3 -->
+        <div class="video-card" onclick="playInlineVideo(this, 'E9PEFvnywEY')">
+          <div class="video-poster-wrapper">
+            <img src="https://img.youtube.com/vi/E9PEFvnywEY/hqdefault.jpg" alt="Vindhyawasini Temple Trek" class="video-poster-img">
+            <div class="play-btn-overlay">
+              <i class="fa-solid fa-play"></i>
+            </div>
           </div>
           <div class="video-info">
             <h4>Vindhyawasini Temple Trek</h4>
             <p>Explore the spiritual forest trek right next to the resort.</p>
+            <a href="https://www.youtube.com/watch?v=E9PEFvnywEY" target="_blank" onclick="event.stopPropagation();" class="yt-card-btn">
+              <i class="fa-brands fa-youtube" style="color: #FF0000;"></i> Open Video on YouTube
+            </a>
           </div>
         </div>
 
-        <div class="video-card">
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/7Mu-52YlzEk" title="Jhilmil Cave Tour" allowfullscreen></iframe>
+        <!-- Video 4 -->
+        <div class="video-card" onclick="playInlineVideo(this, '7Mu-52YlzEk')">
+          <div class="video-poster-wrapper">
+            <img src="https://img.youtube.com/vi/7Mu-52YlzEk/hqdefault.jpg" alt="Jhilmil Cave Exploration" class="video-poster-img">
+            <div class="play-btn-overlay">
+              <i class="fa-solid fa-play"></i>
+            </div>
           </div>
           <div class="video-info">
             <h4>Jhilmil Cave Exploration</h4>
             <p>Mystical cave sightseeing trek near Rajaji National Park.</p>
+            <a href="https://www.youtube.com/watch?v=7Mu-52YlzEk" target="_blank" onclick="event.stopPropagation();" class="yt-card-btn">
+              <i class="fa-brands fa-youtube" style="color: #FF0000;"></i> Open Video on YouTube
+            </a>
           </div>
         </div>
       </div>
@@ -725,6 +772,15 @@
               <i class="fa-solid fa-phone"></i> Call Resort Guide Now
             </a>
           </div>
+
+          <!-- WebApp Digital Solutions Partner Card -->
+          <div style="background: var(--bg-main); border: 2px solid var(--accent); padding: 20px; border-radius: var(--radius-md); margin-top: 20px; text-align: center; box-shadow: var(--card-shadow);">
+            <h4 style="color: var(--text-heading); font-size: 1.05rem; margin-bottom: 6px;"><i class="fa-solid fa-laptop-code" style="color: var(--accent);"></i> Website Created & Managed By</h4>
+            <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 14px;">WebApp Digital Solutions — Custom Web & Digital Agency</p>
+            <a href="https://webappdigitalsolutions.com/" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 10px 20px; font-size: 0.88rem; width: 100%; justify-content: center;">
+              <i class="fa-solid fa-globe"></i> Visit webappdigitalsolutions.com
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -764,6 +820,64 @@
     </div>
   </div>
 
+  <!-- Payment Success Modal -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-box" style="text-align: center; max-width: 550px; border-color: #25D366;">
+      <div style="width: 80px; height: 80px; background: rgba(37, 211, 102, 0.15); color: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; margin: 0 auto 20px; border: 2px solid #25D366;">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h3 style="color: var(--text-heading); font-size: 1.8rem; margin-bottom: 6px;">Payment Successful! 🎉</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px;">Your reservation at <strong>Junglee Resort</strong> is confirmed!</p>
+
+      <div style="background: var(--bg-main); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px; text-align: left; margin-bottom: 24px; font-size: 0.9rem;">
+        <div class="bank-row"><span>Payment ID:</span><strong id="receiptPayId" style="color: #25D366;">pay_Test123456789</strong></div>
+        <div class="bank-row"><span>Guest Name:</span><strong id="receiptGuestName">Sagar Mishra</strong></div>
+        <div class="bank-row"><span>Room Category:</span><strong id="receiptRoomType">Wood House</strong></div>
+        <div class="bank-row"><span>Stay Duration:</span><strong id="receiptNights">1 Night(s) / 2 Guests</strong></div>
+        <div class="bank-row"><span>Total Amount Paid:</span><strong id="receiptAmount" style="font-size: 1.1rem; color: var(--accent);">₹4,000</strong></div>
+        <div class="bank-row"><span>Transaction Status:</span><strong style="color: #25D366;"><i class="fa-solid fa-shield-halved"></i> SUCCESS (RAZORPAY TEST)</strong></div>
+      </div>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+        <a id="receiptWaBtn" href="#" target="_blank" class="btn-primary" style="background: #25D366; color: #FFF; font-size: 0.9rem; flex: 1;">
+          <i class="fa-brands fa-whatsapp"></i> Send Receipt on WhatsApp
+        </a>
+        <button onclick="document.getElementById('successModal').classList.remove('active')" class="btn-secondary" style="font-size: 0.9rem;">
+          Close
+        </button>
+  <!-- Video Player Modal -->
+  <div class="modal-overlay" id="videoModal">
+    <div class="modal-box" style="max-width: 840px; width: 95%; padding: 20px; background: #0A140E; border-color: var(--accent);">
+      <button class="modal-close" onclick="closeVideoModal()">&times;</button>
+      <h4 id="videoModalTitle" style="color: var(--text-heading); font-size: 1.25rem; margin-bottom: 16px;">Video Guide</h4>
+      <div class="video-wrapper">
+        <iframe id="videoModalIframe" src="" title="YouTube Video Guide" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; flex-wrap: wrap; gap: 10px;">
+        <span style="color: var(--text-muted); font-size: 0.85rem;"><i class="fa-solid fa-circle-info"></i> Click outside or X to close video</span>
+        <a id="watchOnYtBtn" href="#" target="_blank" class="btn-primary" style="font-size: 0.85rem; padding: 10px 18px; background: #FF0000; color: #FFF;">
+          <i class="fa-brands fa-youtube"></i> Watch Directly On YouTube
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Language Switcher Widget (Bottom Right) -->
+  <div class="lang-float-container" id="langFloatContainer">
+    <div class="lang-dropdown" id="langDropdown">
+      <button class="lang-option active" data-lang="en">
+        <span class="flag-icon">🇬🇧</span> English <i class="fa-solid fa-check check-icon"></i>
+      </button>
+      <button class="lang-option" data-lang="hi">
+        <span class="flag-icon">🇮🇳</span> हिंदी (Hindi) <i class="fa-solid fa-check check-icon"></i>
+      </button>
+    </div>
+    <button class="lang-float-btn" id="langFloatBtn" aria-label="Change Language" title="Language / भाषा switch">
+      <i class="fa-solid fa-language"></i>
+      <span class="lang-current-label">ENG</span>
+    </button>
+  </div>
+
   <!-- Mobile Sticky Bottom Bar -->
   <div class="mobile-sticky-bar">
     <a href="tel:9953423776" class="m-btn-call">
@@ -777,11 +891,18 @@
   <!-- Footer -->
   <footer>
     <div class="container">
+      <img src="images/logo.jpg" alt="Junglee Resort Logo" style="height: 54px; width: auto; border-radius: 8px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.2);">
       <div class="footer-logo">JUNGLEE RESORT</div>
       <p>Rajaji Tiger Reserve & National Park, Uttarakhand, India</p>
       <p>© 2026 Junglee Resort. All Rights Reserved. A Unit of Chayan Hotels & Resorts.</p>
+      <div style="margin-top: 18px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9rem; color: rgba(255,255,255,0.85);">
+        Created & Developed by <a href="https://webappdigitalsolutions.com/" target="_blank" rel="noopener noreferrer" style="color: #FFE5A3; text-decoration: none; font-weight: 700; border-bottom: 1px dashed #FFE5A3; transition: all 0.3s ease;">WebApp Digital Solutions</a>
+      </div>
     </div>
   </footer>
+
+  <!-- Razorpay SDK -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
   <!-- Scripts -->
   <script src="script.js"></script>
